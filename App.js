@@ -13,14 +13,16 @@ import {
   StatusBar
 } from 'react-native';
 // import Icon from 'react-native-vector-icons/dist/Entypo';
-import HomeScreen from './src/screens/home/index'
+// import HomeScreen from './src/screens/home/index'
+import Post from './src/components/Post/index'
 
 export default function App() {
   return (
     <>
     <StatusBar barStyle="dark-content" />
     <SafeAreaView>
-      <HomeScreen />
+      
+      <Post />
     </SafeAreaView>
     </>
   )
