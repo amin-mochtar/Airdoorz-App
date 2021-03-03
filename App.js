@@ -9,24 +9,23 @@
 import React from 'react';
 import {
   StyleSheet,
-  View,
-  Text
+  SafeAreaView,
+  StatusBar
 } from 'react-native';
-
+// import Icon from 'react-native-vector-icons/dist/Entypo';
+import HomeScreen from './src/screens/home/index'
 
 export default function App() {
   return (
-    <View style={styles.viewContainer}>
-      <Text>Plant App</Text>
-    </View>
+    <>
+    <StatusBar barStyle="dark-content" />
+    <SafeAreaView>
+      <HomeScreen />
+    </SafeAreaView>
+    </>
   )
 
 }
 const styles = StyleSheet.create({
-  viewContainer: {
-    flex: 1,
-    backgroundColor: '#ffff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
+ 
 })
