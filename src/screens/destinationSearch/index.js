@@ -1,0 +1,54 @@
+import React, {useState} from 'react'
+import { StyleSheet, Text, View, TextInput, FlatList } from 'react-native'
+
+import searchValue from '../../../assets/data/searchValue'
+import Entypo from 'react-native-vector-icons/Entypo'
+const DestinationSearch = () => {
+    const {inputText, setInputText} = useState();
+    return (
+        <View style={styles.container}>
+            <TextInput style={styles.textInput}
+            placeholder="Where Are you going"
+            value={inputText}
+            onChangeText={setInputText}
+            />
+
+            <FlatList 
+            data={searchValue}
+            renderItem={({item}) => (
+                <View style={styles.row}>
+                    <View style={styles.iconContainer}>
+                        <Entypo name={"location-pin"} size={30} />
+                    </View>
+                    <Text style={styles.locationText}>{item.description}</Text>
+                </View>
+            )}
+            />
+        </View>
+    )
+}
+
+export default DestinationSearch
+
+const styles = StyleSheet.create({
+    container: {
+        margin: 20,
+    },
+    textInput: {
+        fontSize: 20,
+        marginBottom: 20,
+    },
+    row: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 15,
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
+    },
+    iconContainer: {
+        backgroundColor: '#e7e7e7',
+        padding: 7,
+        borderRadius: 10,
+        marginRight: 15
+    }
+})

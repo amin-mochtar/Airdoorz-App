@@ -16,7 +16,9 @@ import {
 // import HomeScreen from './src/screens/home/index'
 // import Post from './src/components/Post/index'
 // import Feed from './assets/data/feed'
-import SearchResults from './src/screens/searchResult/index'
+// import SearchResults from './src/screens/searchResult/index'
+// import DestinationSearch from './src/screens/destinationSearch/index'
+import Guest from './src/screens/guest/index'
 
 // const post1 = Feed[0]
 export default function App() {
@@ -25,7 +27,9 @@ export default function App() {
     <StatusBar barStyle="dark-content" />
     <SafeAreaView>
       {/* <Post post={post1} /> */}
-      <SearchResults />
+      {/* <SearchResults /> */}
+      {/* <DestinationSearch /> */}
+      <Guest />
     </SafeAreaView>
     </>
   )
