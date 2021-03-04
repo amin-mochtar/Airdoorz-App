@@ -1,26 +1,25 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
-const Post = () => {
+const Post = (props) => {
+    const post = props.post
     return (
         <View style={styles.container}>
             <Image 
             style={styles.image} 
-            source={{uri: 'https://cdn-2.tstatic.net/solo/foto/bank/images/hotel-alila-solo_20160331_155640.jpg'}} 
+            source={{uri: `${post.image}`}} 
             />
-            <Text style={styles.bedrooms}>1 bed 1 bedroom</Text>
+            <Text style={styles.bedrooms}>{post.bed} bed {post.bedroom}</Text>
             <Text style={styles.descriptions} numberOfLines={2}>
-                Hotel yang diyakini sebagai hotel mewah berstandar internasional pertama di kota yang berada di Jawa Tengah ini, menyediakan 255 kamar hotel. 
-                Masing-masing kamar menyuguhkan pemandangan Kota Solo dan sekitarnya. 
-                Jika anda akan berkunjung ke Solo dan ingin mencoba kualitas kenyamanan hotel berstandar internasional ini, hotel Alila dapat menjadi salah satu pilihan anda ketika di kota Solo.
+                {post.type} {post.title}
             </Text>
 
             <Text style={styles.prices}>
-                <Text style={styles.oldPrice}>$36</Text>
-                <Text style={styles.price} > $30</Text>
+                <Text style={styles.oldPrice}>{post.oldPrice}</Text>
+                <Text style={styles.price} > {post.newPrice}</Text>
             </Text>
 
-            <Text style={styles.totalPrice}>$200 total</Text>
+            <Text style={styles.totalPrice}>{post.total}</Text>
         </View>
     )
 }
