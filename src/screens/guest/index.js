@@ -8,64 +8,65 @@ const Guest = () => {
     const [infants, setInfants] = useState(0)
     return (
         <View>
-            {/* row 1 adults */}
-            <View style={styles.row}>
-                {/* title */}
-                <View>
-                    <Text style={{fontWeight: 'bold'}}>Adults</Text>
-                    <Text style={{color: '#8d8d8d'}}>Ages 13 or Above</Text>
+            <View>
+                {/* row 1 adults */}
+                <View style={styles.row}>
+                    {/* title */}
+                    <View>
+                        <Text style={{fontWeight: 'bold'}}>Adults</Text>
+                        <Text style={{color: '#8d8d8d'}}>Ages 13 or Above</Text>
+                    </View>
+
+                    {/* button */}
+                    <View style={styles.buttonWrapper}>
+                        <Pressable 
+                            style={styles.button}
+                            onPress={() => setAdults(Math.max(0, adults-1))}
+                        >
+                            <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
+                        </Pressable>
+                    
+
+                        <Text style={styles.count}>{adults}</Text>
+
+                        <Pressable 
+                            style={styles.button}
+                            onPress={() => setAdults(adults+1)}
+                        >
+                            <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
+                        </Pressable>
+                    </View>
                 </View>
+                {/* row 2 Childrem */}
+                <View style={styles.row}>
+                    {/* title */}
+                    <View>
+                        <Text style={{fontWeight: 'bold'}}>Children</Text>
+                        <Text style={{color: '#8d8d8d'}}>Ages 2-12 years old</Text>
+                    </View>
 
-                {/* button */}
-                <View style={styles.buttonWrapper}>
-                    <Pressable 
-                        style={styles.button}
-                        onPress={() => setAdults(Math.max(0, adults-1))}
-                    >
-                        <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
-                    </Pressable>
-                
+                    {/* button */}
+                    <View style={styles.buttonWrapper}>
+                        <Pressable 
+                            style={styles.button}
+                            onPress={() => setChildren(Math.max(0, children-1))}
+                        >
+                            <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
+                        </Pressable>
+                    
 
-                    <Text style={styles.count}>{adults}</Text>
+                        <Text style={styles.count}>{children}</Text>
 
-                    <Pressable 
-                        style={styles.button}
-                        onPress={() => setAdults(adults+1)}
-                    >
-                        <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
-                    </Pressable>
+                        <Pressable 
+                            style={styles.button}
+                            onPress={() => setChildren(children+1)}
+                        >
+                            <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
+                        </Pressable>
+                    </View>
                 </View>
-            </View>
-            {/* row 2 Childrem */}
-            <View style={styles.row}>
-                {/* title */}
-                <View>
-                    <Text style={{fontWeight: 'bold'}}>Children</Text>
-                    <Text style={{color: '#8d8d8d'}}>Ages 2-12 years old</Text>
-                </View>
-
-                {/* button */}
-                <View style={styles.buttonWrapper}>
-                    <Pressable 
-                        style={styles.button}
-                        onPress={() => setChildren(Math.max(0, children-1))}
-                    >
-                        <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
-                    </Pressable>
-                
-
-                    <Text style={styles.count}>{children}</Text>
-
-                    <Pressable 
-                        style={styles.button}
-                        onPress={() => setChildren(children+1)}
-                    >
-                        <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
-                    </Pressable>
-                </View>
-            </View>
-            {/* row 3 infants */}
-            <View style={styles.row}>
+                {/* row 3 infants */}
+                <View style={styles.row}>
                 {/* title */}
                 <View>
                     <Text style={{fontWeight: 'bold'}}>Infants</Text>
@@ -91,6 +92,12 @@ const Guest = () => {
                         <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
                     </Pressable>
                 </View>
+            </View>
+                
+                <Pressable style={styles.searchBottom}>
+                    <Text style={{fontSize: 20, color: '#fff', fontWeight: 'bold'}}>Search</Text>
+                </Pressable>
+               
             </View>
         </View>
     )
@@ -123,5 +130,14 @@ const styles = StyleSheet.create({
     count: {
         marginHorizontal: 20,
         fontSize: 17
+    },
+    searchBottom: {
+        top: 425,
+        backgroundColor: '#f15454',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 50,
+        marginHorizontal: 20,
+        borderRadius: 10
     }
 })
